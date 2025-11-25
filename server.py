@@ -1,5 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from datetime import datetime
 import subprocess
+
+OUTPUT_DIR = "/home/ubuntu/heapdump/dump"
 
 
 def get_pm2_pid():
@@ -34,7 +37,9 @@ def get_pm2_pid():
 
 def trigger_heap_dump(pid: int):
     # Use argument list to avoid shell injection
-    cmd = ["jcmd", str(pid), "GC.heap_dump", "/tmp/heapdump.hprof"]
+    now = datetime.now()
+    filename = f"{OUTPUT_DIR}/{now.strftime('heapdump-%Y%m%d-%H%M.hprof')}"
+    cmd = ["jcmd", str(pid), "GC.heap_dump", filename]
 
     subprocess.run(cmd, check=True)
 
