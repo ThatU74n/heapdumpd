@@ -12,7 +12,7 @@ Group=ubuntu
 # Restrict permissions for security
 NoNewPrivileges=yes
 ProtectSystem=full
-ProtectHome=true
+ProtectHome=no
 PrivateTmp=no
 PrivateDevices=yes
 ProtectKernelTunables=yes
