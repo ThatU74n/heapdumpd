@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from datetime import datetime
 import subprocess
 
-OUTPUT_DIR = "/home/ubuntu/heapdump/dump"
+OUTPUT_DIR = "/home/ubuntu/heapdumpd/dump"
 
 
 def get_pm2_pid():

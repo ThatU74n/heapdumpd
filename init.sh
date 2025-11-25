@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-mkdir -p ~/heapdump/dump
+mkdir -p ~/heapdumpd/dump
 
 cp ./heapdump-server.service /etc/systemd/system/heapdump-server.service
 
