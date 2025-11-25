@@ -1,0 +1,23 @@
+[Unit]
+Description=Heapdump Trigger HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/ubuntu/heapdump/heapdump_server.py
+Restart=on-failure
+User=ubuntu
+Group=ubuntu
+
+# Restrict permissions for security
+NoNewPrivileges=yes
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+
+[Install]
+WantedBy=multi-user.target
+
